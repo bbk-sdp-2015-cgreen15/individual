@@ -1,0 +1,10 @@
+f0 lin 0 1
+f1 lin 1 2
+f2 lin 2 13
+f3 add 3 0 1
+f4 add 4 1 2
+f5 sub 5 4 0
+f6 mul 6 0 1
+f7 mul 7 1 2 
+f8 div 8 7 2
+f9 out 7
