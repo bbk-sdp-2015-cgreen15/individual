@@ -1,9 +1,9 @@
 package sml;
 
 /**
- * This class ....
+ * This class adds one operand to another and puts result in a register
  * 
- * @author someone
+ * @author Craig Greenhouse
  */
 
 public class AddInstruction extends Instruction {

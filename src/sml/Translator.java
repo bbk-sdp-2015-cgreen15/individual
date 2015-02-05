@@ -22,6 +22,7 @@ public class Translator {
 	private static final String SRC = "src";
 
 	public Translator(String fileName) {
+		
 		this.fileName = SRC + "/" + fileName;
 	}
 
@@ -29,7 +30,7 @@ public class Translator {
 	// prog (the program)
 	// return "no errors were detected"
 	public boolean readAndTranslate(Labels lab, ArrayList<Instruction> prog) {
-
+		
 		try (Scanner sc = new Scanner(new File(fileName))) {
 			// Scanner attached to the file chosen by the user
 			labels = lab;
@@ -73,15 +74,15 @@ public class Translator {
 	// removed. Translate line into an instruction with label label
 	// and return the instruction
 	public Instruction getInstruction(String label) {
-		int s1; // Possible operands of the instruction
-		int s2;
-		int r;
-		int x;
+		int s1; // Possible operand 1 (register id ) of the instruction
+		int s2; // Possible operand 2 (register id ) of the instruction
+		int r;	// receiving register (register id) 
+		int x;	// raw integer value 
 
 		if (line.equals(""))
 			return null;
 
-		String ins = scan();
+		String ins = scan();	// get next bit of line, e.g. instruction
 		switch (ins) {
 		case "add":
 			r = scanInt();
@@ -90,11 +91,25 @@ public class Translator {
 			return new AddInstruction(label, r, s1, s2);
 		case "lin":
 			r = scanInt();
+			x = scanInt();
+			return new LinInstruction(label, r, x);
+		case "sub":
+			r = scanInt();
 			s1 = scanInt();
-			return new LinInstruction(label, r, s1);
+			s2 = scanInt();
+			return new SubInstruction(label, r, s1, s2);
+		case "mul":
+			r = scanInt();
+			s1 = scanInt();
+			s2 = scanInt();
+			return new MulInstruction(label, r, s1, s2);
+				
+			// sub
+			// mul 
+			// div 
+			// out
+			// bnz 
 		}
-
-		// You will have to write code here for the other instructions.
 
 		return null;
 	}
