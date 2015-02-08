@@ -1,9 +1,9 @@
 package sml;
 
 /**
- * This class ....
+ * This class loads a value into a register (like "LDA" in the olden days of assembly language ;-) 
  * 
- * @author Craig Greenhouse
+ * @author KLM / Craig Greenhouse
  */
 
 public class LinInstruction extends Instruction {

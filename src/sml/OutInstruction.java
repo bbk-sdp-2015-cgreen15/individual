@@ -23,7 +23,7 @@ public class OutInstruction extends Instruction {
 	@Override
 	public void execute(Machine m) {
 		int value1 = m.getRegisters().getRegister(op1);
-		System.out.println("(out instruction says) Value of register " + op1 + " is " + value1);
+		System.out.println("(`out` instruction says) Value of register " + op1 + " is " + value1);
 	}
 
 	@Override
