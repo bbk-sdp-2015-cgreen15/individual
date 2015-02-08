@@ -1,0 +1,7 @@
+l0 lin 0 6
+l1 lin 1 1
+l2 lin 2 1
+l3 mul 1 1 0
+l4 sub 0 0 2
+l5 bnz 0 l3
+l6 out 1

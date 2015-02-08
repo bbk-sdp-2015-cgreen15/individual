@@ -17,7 +17,7 @@ public class Registers {
 	private int registers[];
 
 	// Constructor: an instance whose registers are set to 0
-
+	
 	{
 		registers = new int[NUMBEROFREGISTERS];
 	}

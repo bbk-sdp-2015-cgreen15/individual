@@ -70,4 +70,13 @@ public class Machine {
 			ins.execute(this);
 		}
 	}
+	
+	private int getPcFromLabel(String label) {
+		return labels.indexOf(label);
+	}
+	
+	public void jumpToLabel(String label) {
+		// Used by the BNZ Instruction to jump to appropriate instruction
+		setPc(getPcFromLabel(label));
+	}
 }

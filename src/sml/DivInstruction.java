@@ -14,11 +14,14 @@ public class DivInstruction extends Instruction {
 	private int op2;
 
 	public DivInstruction(String label, String op) {
+		// Invoke the superclass Instruction's Constructor 
 		super(label, op);
 	}
 
+	
 	public DivInstruction(String label, int result, int op1, int op2) {
-		this(label, "div");
+		// Use Polymorphism for this class's constructor
+		this(label, "div"); 	// Invoke Super Constructor
 		this.result = result;
 		this.op1 = op1;
 		this.op2 = op2;

@@ -1,0 +1,22 @@
+# Load 6 into the counter
+l0 lin 0 6
+
+# Load 1 into the "seed" value
+l1 lin 1 1
+
+# load decrement value
+l2 lin 2 1
+
+# Multiply seed by counter
+l3 mul 1 1 0
+
+# Decrement counter by 1 (stored in register 2)
+l4 sub 0 0 2
+
+# Check if counter has reached zero - if NOT - continue
+l5 bnz 0 l3
+
+# Finally, output the calculated factorial value
+l6 out 1
+
+# TODO - Fibonnacci ;-)

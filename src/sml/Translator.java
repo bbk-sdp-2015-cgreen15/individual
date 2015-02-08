@@ -46,10 +46,12 @@ public class Translator {
 
 			// Each iteration processes line and reads the next line into line
 			while (line != null) {
+				
 				// Store the label in label
+				
 				String label = scan();
-
-				if (label.length() > 0) {
+				
+				if (label.length() > 0 && label.charAt(0) != '#') {	// Allow comment lines starting with #
 					Instruction ins = getInstruction(label);
 					if (ins != null) {
 						labels.addLabel(label);
@@ -73,16 +75,23 @@ public class Translator {
 	// line should consist of an MML instruction, with its label already
 	// removed. Translate line into an instruction with label label
 	// and return the instruction
-	public Instruction getInstruction(String label) {
+	public Instruction getInstruction(String label) {	
+		
+		// the "Instruction" part means that the getInstruction function 
+		// returns an object of the class type Instruction 
+		
 		int s1; // Possible operand 1 (register id ) of the instruction
 		int s2; // Possible operand 2 (register id ) of the instruction
 		int r;	// receiving register (register id) 
 		int x;	// raw integer value 
+		String l2; // label to jump to for the bnz instruction
 
 		if (line.equals(""))
 			return null;
 
 		String ins = scan();	// get next bit of line, e.g. instruction
+		
+		// Each Class below invokes the superclass' constructor to set label and op
 		switch (ins) {
 		case "add":
 			r = scanInt();
@@ -111,6 +120,10 @@ public class Translator {
 		case "out":
 			s1 = scanInt();
 			return new OutInstruction(label, s1);
+		case "bnz":
+			s1 = scanInt();
+			l2 = scan();
+			return new BnzInstruction(label, s1, l2);
 		}
 
 		return null;
