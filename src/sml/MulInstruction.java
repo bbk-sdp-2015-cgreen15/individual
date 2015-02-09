@@ -12,7 +12,7 @@ public class MulInstruction extends Instruction {
 	private int op1;
 	private int op2;
 
-	public MulInstruction(String label, String op) {
+	protected MulInstruction(String label, String op) {
 		super(label, op);
 	}
 

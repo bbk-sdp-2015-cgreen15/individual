@@ -85,11 +85,22 @@ public class Translator {
 		int r;	// receiving register (register id) 
 		int x;	// raw integer value 
 		String l2; // label to jump to for the bnz instruction
-
+		// Class<?> instruction;
+		
 		if (line.equals(""))
 			return null;
 
 		String ins = scan();	// get next bit of line, e.g. instruction
+		// String instClass = ins.substring(0, 1).toUpperCase() + ins.substring(1) + "Instruction";
+		
+//		try {
+//			instruction = Class.forName(instClass);
+//			//Field[] fields = instruction.getFields();
+//			
+//		} catch (ClassNotFoundException e) {
+//			return null;
+//			// Instruction type not found
+//		}
 		
 		// Each Class below invokes the superclass' constructor to set label and op
 		switch (ins) {
@@ -118,12 +129,12 @@ public class Translator {
 			s2 = scanInt();
 			return new DivInstruction(label, r, s1, s2);
 		case "out":
-			s1 = scanInt();
-			return new OutInstruction(label, s1);
+			r = scanInt();
+			return new OutInstruction(label, r);
 		case "bnz":
-			s1 = scanInt();
+			r = scanInt();
 			l2 = scan();
-			return new BnzInstruction(label, s1, l2);
+			return new BnzInstruction(label, r, l2);
 		}
 
 		return null;

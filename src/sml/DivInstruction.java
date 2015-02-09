@@ -13,7 +13,7 @@ public class DivInstruction extends Instruction {
 	private int op1;
 	private int op2;
 
-	public DivInstruction(String label, String op) {
+	protected DivInstruction(String label, String op) {
 		// Invoke the superclass Instruction's Constructor 
 		super(label, op);
 	}

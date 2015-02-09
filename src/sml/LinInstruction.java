@@ -10,7 +10,7 @@ public class LinInstruction extends Instruction {
 	private int register;
 	private int value;
 
-	public LinInstruction(String label, String opcode) {
+	protected LinInstruction(String label, String opcode) {
 		super(label, opcode);
 	}
 

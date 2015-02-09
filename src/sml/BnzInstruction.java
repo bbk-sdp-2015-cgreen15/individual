@@ -15,7 +15,7 @@ public class BnzInstruction extends Instruction {
 	private int register;
 	private String l2;
 	
-	public BnzInstruction(String label, String op) {
+	protected BnzInstruction(String label, String op) {
 		super(label, op);
 	}
 		

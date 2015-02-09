@@ -12,7 +12,7 @@ public class SubInstruction extends Instruction {
 	private int op1;
 	private int op2;
 
-	public SubInstruction(String label, String op) {
+	protected SubInstruction(String label, String op) {
 		super(label, op);
 	}
 

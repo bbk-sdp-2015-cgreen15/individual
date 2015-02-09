@@ -11,7 +11,7 @@ public class OutInstruction extends Instruction {
 	// private int result;
 	private int op1;
 
-	public OutInstruction(String label, String op) {
+	protected OutInstruction(String label, String op) {
 		super(label, op);
 	}
 
