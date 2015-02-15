@@ -12,10 +12,12 @@ public class AddInstruction extends Instruction {
 	private int op1;
 	private int op2;
 
+	// "Hide" this constructor from reflection
 	protected AddInstruction(String label, String op) {
 		super(label, op);
 	}
 
+	// Use a public constructor for reflection to get the parameters from the "Default" constructor
 	public AddInstruction(String label, int result, int op1, int op2) {
 		this(label, "add");	// Invoke Super Constructor
 		

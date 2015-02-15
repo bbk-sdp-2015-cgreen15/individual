@@ -10,10 +10,12 @@ public class LinInstruction extends Instruction {
 	private int register;
 	private int value;
 
+	// "Hide" this constructor from reflection
 	protected LinInstruction(String label, String opcode) {
 		super(label, opcode);
 	}
 
+	// Use a public constructor for reflection to get the parameters from the "Default" constructor
 	public LinInstruction(String label, int register, int value) {
 		super(label, "lin");
 		this.register = register;

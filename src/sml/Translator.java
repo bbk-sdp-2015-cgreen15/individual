@@ -91,16 +91,48 @@ public class Translator {
 			return null;
 
 		String ins = scan();	// get next bit of line, e.g. instruction
-		// String instClass = ins.substring(0, 1).toUpperCase() + ins.substring(1) + "Instruction";
+		
+		
+		//********************************************************************************
+		// USING REFLECTION
+		
+		// I Couldn't get the reflection code to work ...
+		
+		// Reflection 
+		// Get the constructor from the "default" ( = first public ) constructor
+		// Use reflection to read the list of constructor parameter types 
+		// pass in the appropriate number and types of parameters
+		
+		// Or we could get the private fields and assume that we need to add a 
+		// string label on at the front for the opcode  
+		
+//		String instClass = ins.substring(0, 1).toUpperCase() + ins.substring(1) + "Instruction";
 		
 //		try {
 //			instruction = Class.forName(instClass);
-//			//Field[] fields = instruction.getFields();
+//			Field[] fields = instruction.getFields();
 //			
 //		} catch (ClassNotFoundException e) {
 //			return null;
 //			// Instruction type not found
 //		}
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+
+		// Switch NOT NEEDED if reflection were working:
+		
+		//********************************************************************************
+		// USING SWITCH
 		
 		// Each Class below invokes the superclass' constructor to set label and op
 		switch (ins) {

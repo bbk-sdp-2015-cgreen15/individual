@@ -15,10 +15,12 @@ public class BnzInstruction extends Instruction {
 	private int register;
 	private String l2;
 	
+	// "Hide" this constructor from reflection
 	protected BnzInstruction(String label, String op) {
 		super(label, op);
 	}
 		
+	// Use a public constructor for reflection to get the parameters from the "Default" constructor
 	public BnzInstruction(String label, int register, String l2) {
 		this(label, "bnz"); // Invoke Super Constructor
 		this.register = register;

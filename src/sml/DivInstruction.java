@@ -13,12 +13,13 @@ public class DivInstruction extends Instruction {
 	private int op1;
 	private int op2;
 
+	// "Hide" this constructor from reflection
 	protected DivInstruction(String label, String op) {
 		// Invoke the superclass Instruction's Constructor 
 		super(label, op);
 	}
 
-	
+	// Use a public constructor for reflection to get the parameters from the "Default" constructor
 	public DivInstruction(String label, int result, int op1, int op2) {
 		// Use Polymorphism for this class's constructor
 		this(label, "div"); 	// Invoke Super Constructor

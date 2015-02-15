@@ -11,10 +11,12 @@ public class OutInstruction extends Instruction {
 	// private int result;
 	private int op1;
 
+	// "Hide" this constructor from reflection
 	protected OutInstruction(String label, String op) {
 		super(label, op);
 	}
 
+	// Use a public constructor for reflection to get the parameters from the "Default" constructor
 	public OutInstruction(String label, int op1) {
 		this(label, "out"); 	// Invoke Super Constructor
 		this.op1 = op1;
